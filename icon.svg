@@ -1,0 +1,8 @@
+module.exports = __webpack_public_path__ + "static/media/icon.81acaf7c.svg";
+
+
+//////////////////
+// WEBPACK FOOTER
+// ./src/app/res/images/cookies/icon.svg
+// module id = 954
+// module chunks = 21

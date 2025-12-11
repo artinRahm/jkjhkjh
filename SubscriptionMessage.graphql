@@ -1,0 +1,33 @@
+
+    var doc = {"kind":"Document","definitions":[{"kind":"FragmentDefinition","name":{"kind":"Name","value":"SubscriptionMessage"},"typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"Message"}},"directives":[],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"BaseSubscriptionMessage"},"directives":[]},{"kind":"Field","name":{"kind":"Name","value":"referencedMessage"},"arguments":[],"directives":[],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"BaseSubscriptionMessage"},"directives":[]}]}}]}}],"loc":{"start":0,"end":333}};
+    doc.loc.source = {"body":"#import \"./BaseSubscriptionMessage.graphql\"\n\n# Message.graphql without author.color\n# Message data is in BaseSubscriptionMessage, this just adds referencedMessage for a nested message object\n\nfragment SubscriptionMessage on Message {\n    ...BaseSubscriptionMessage\n\n    referencedMessage {\n        ...BaseSubscriptionMessage\n    }\n}\n","name":"GraphQL request","locationOffset":{"line":1,"column":1}};
+  
+
+    var names = {};
+    function unique(defs) {
+      return defs.filter(
+        function(def) {
+          if (def.kind !== 'FragmentDefinition') return true;
+          var name = def.name.value
+          if (names[name]) {
+            return false;
+          } else {
+            names[name] = true;
+            return true;
+          }
+        }
+      )
+    }
+  doc.definitions = doc.definitions.concat(unique(require("./BaseSubscriptionMessage.graphql").definitions));
+
+
+      module.exports = doc;
+    
+
+
+
+//////////////////
+// WEBPACK FOOTER
+// ./src/hooks/useMessages/Fragments/SubscriptionMessage.graphql
+// module id = 959
+// module chunks = 21

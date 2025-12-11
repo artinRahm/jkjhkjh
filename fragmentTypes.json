@@ -1,0 +1,8 @@
+module.exports = {"__schema":{"types":[{"kind":"INTERFACE","name":"Action","possibleTypes":[{"name":"JoinMember"},{"name":"KickMember"}]},{"kind":"INTERFACE","name":"Channel","possibleTypes":[{"name":"AnnouncementChannel"},{"name":"ForumChannel"},{"name":"TextChannel"},{"name":"ThreadChannel"},{"name":"VoiceChannel"}]},{"kind":"INTERFACE","name":"Chat","possibleTypes":[{"name":"DirectChat"},{"name":"DirectGroupChat"}]}]}}
+
+
+//////////////////
+// WEBPACK FOOTER
+// ./src/lib/apollo/codegen/fragmentTypes.json
+// module id = 805
+// module chunks = 21
